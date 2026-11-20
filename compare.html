@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" class="battery">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare - Student Laptop Finder</title>
+    <link href="./dist/output.css" rel="stylesheet">
+</head>
+<body class="bg-[var(--color-bg-battery)] text-[var(--color-text-battery)] transition-colors duration-300 min-h-screen flex flex-col">
+
+    <header class="p-4 shadow-md bg-white/50 backdrop-blur-md sticky top-0 z-50">
+        <div class="container mx-auto flex flex-wrap justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-[var(--color-accent-battery)]">💻 LaptopFinder</a>
+            
+            <nav class="hidden md:flex gap-6 font-medium">
+                <a href="index.html" class="hover:text-[var(--color-accent-battery)] transition">Home</a>
+                <a href="laptops.html" class="hover:text-[var(--color-accent-battery)] transition">Catalogue</a>
+                <a href="favorites.html" class="hover:text-[var(--color-accent-battery)] transition">Favorites</a>
+                <a href="compare.html" class="text-[var(--color-accent-battery)] font-bold">Compare</a>
+            </nav>
+
+            <div class="flex items-center gap-2">
+                <button id="theme-toggle" class="btn-action bg-gray-200 text-gray-800 hover:bg-gray-300 text-sm">
+                    🍃 Battery Saver
+                </button>
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg bg-gray-200 text-gray-800 font-bold">
+                    ☰
+                </button>
+            </div>
+        </div>
+        <nav id="mobile-menu" class="hidden md:hidden flex-col gap-3 pt-4 mt-3 border-t border-gray-300/40 font-medium container mx-auto">
+            <a href="index.html" class="block py-1 hover:text-[var(--color-accent-battery)]">Home</a>
+            <a href="laptops.html" class="block py-1 hover:text-[var(--color-accent-battery)]">Catalogue</a>
+            <a href="favorites.html" class="block py-1 hover:text-[var(--color-accent-battery)]">Favorites</a>
+            <a href="compare.html" class="block py-1 text-[var(--color-accent-battery)] font-bold">Compare</a>
+        </nav>
+    </header>
+
+    <main class="container mx-auto p-6 flex-grow">
+        <h1 class="text-3xl md:text-5xl font-bold mb-4 text-center">Compare Favorites ⚖️</h1>
+        <p class="text-center opacity-80 mb-8">Select 2 to 4 laptops from your saved favorites to compare side-by-side. Best specs are highlighted!</p>
+        
+        <div id="fav-selector" class="bg-white/10 p-5 rounded-2xl border border-gray-400/30 mb-8">
+            <h2 class="text-lg font-bold mb-3">Your Saved Favorites (Click to toggle comparison):</h2>
+            <div id="fav-chips" class="flex flex-wrap gap-3"></div>
+            <p id="compare-warning" class="text-red-500 font-bold mt-3 hidden"></p>
+        </div>
+
+        <div id="compare-container" class="w-full overflow-x-auto pb-4">
+        </div>
+    </main>
+
+    <footer class="p-4 text-center text-sm opacity-70 mt-auto">
+        &copy; 2026 Student Laptop Finder. Built with Tailwind CSS & Vanilla JS.
+    </footer>
+
+    <script type="module" src="./src/js/compare.js"></script>
+</body>
+</html>
