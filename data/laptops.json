@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "MacBook Air M2",
+    "brand": "Apple",
+    "price": 1199,
+    "category": "ultrabook",
+    "cpu": "Apple M2",
+    "ramGB": 8,
+    "storageGB": 256,
+    "batteryHours": 18,
+    "weightKg": 1.24,
+    "screenInches": 13.6,
+    "image": "assets/macbook.jpg",
+    "description": "Lightweight and powerful ultrabook for everyday use."
+  },
+  {
+    "id": 2,
+    "name": "ROG Zephyrus G14",
+    "brand": "ASUS",
+    "price": 1499,
+    "category": "gaming",
+    "cpu": "AMD Ryzen 9",
+    "ramGB": 16,
+    "storageGB": 1000,
+    "batteryHours": 10,
+    "weightKg": 1.65,
+    "screenInches": 14,
+    "image": "assets/rog.jpg",
+    "description": "Compact gaming laptop with incredible performance."
+  }
+]

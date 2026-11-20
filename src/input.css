@@ -1,0 +1,20 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/forms";
+
+@theme {
+  --color-bg-battery: #f8fafc;
+  --color-text-battery: #0f172a;
+  --color-accent-battery: #10b981;
+  --color-bg-perf: #0f172a;
+  --color-text-perf: #f8fafc;
+  --color-accent-perf: #f97316;
+}
+
+@layer components {
+  .laptop-card {
+    @apply border border-gray-200 rounded-xl p-4 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl bg-white dark:bg-gray-800 dark:border-gray-700;
+  }
+  .btn-action {
+    @apply px-4 py-2 rounded-lg font-semibold transition-colors duration-200 cursor-pointer shadow-sm;
+  }
+}
