@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" class="battery">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogue - Laptop Finder</title>
+    <link href="./dist/output.css" rel="stylesheet">
+</head>
+<body class="bg-[var(--color-bg-battery)] text-[var(--color-text-battery)] transition-colors duration-300 min-h-screen flex flex-col">
+
+    <header class="p-4 shadow-md bg-white/50 backdrop-blur-md sticky top-0 z-50">
+        <div class="container mx-auto flex flex-wrap justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-[var(--color-accent-battery)]">💻 LaptopFinder</a>
+            
+            <nav class="hidden md:flex gap-6 font-medium">
+                <a href="index.html" class="hover:text-[var(--color-accent-battery)] transition">Home</a>
+                <a href="laptops.html" class="hover:text-[var(--color-accent-battery)] transition text-[var(--color-accent-battery)]">Catalogue</a>
+                <a href="favorites.html" class="hover:text-[var(--color-accent-battery)] transition">Favorites</a>
+                <a href="compare.html" class="hover:text-[var(--color-accent-battery)] transition">Compare</a>
+            </nav>
+
+            <button id="theme-toggle" class="btn-action bg-gray-200 text-gray-800 hover:bg-gray-300">
+                🌓 Switch Theme
+            </button>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-6 flex-grow">
+        
+        <section class="bg-white/10 p-6 rounded-2xl shadow-sm border mb-8 backdrop-blur-sm">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                
+                <div>
+                    <label class="block text-sm font-bold mb-1">Search</label>
+                    <input type="text" id="search-input" placeholder="Name or Brand..." class="w-full rounded-lg border-gray-300 shadow-sm focus:border-[var(--color-accent-battery)] focus:ring-[var(--color-accent-battery)] bg-transparent text-inherit">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold mb-1">Category</label>
+                    <select id="filter-category" class="w-full rounded-lg border-gray-300 shadow-sm focus:border-[var(--color-accent-battery)] focus:ring-[var(--color-accent-battery)] bg-transparent text-inherit">
+                        <option value="all" class="text-black">All Categories</option>
+                        <option value="ultrabook" class="text-black">Ultrabook</option>
+                        <option value="gaming" class="text-black">Gaming</option>
+                        <option value="2-in-1" class="text-black">2-in-1</option>
+                        <option value="creator" class="text-black">Creator</option>
+                        <option value="budget" class="text-black">Budget</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold mb-1">Max Price: $<span id="price-value">3000</span></label>
+                    <input type="range" id="filter-price" min="300" max="3000" step="50" value="3000" class="w-full accent-[var(--color-accent-battery)]">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold mb-1">Sort By</label>
+                    <select id="sort-select" class="w-full rounded-lg border-gray-300 shadow-sm focus:border-[var(--color-accent-battery)] focus:ring-[var(--color-accent-battery)] bg-transparent text-inherit">
+                        <option value="default" class="text-black">Default</option>
+                        <option value="price-asc" class="text-black">Price: Low to High</option>
+                        <option value="price-desc" class="text-black">Price: High to Low</option>
+                        <option value="battery-desc" class="text-black">Battery: High to Low</option>
+                        <option value="weight-asc" class="text-black">Weight: Light to Heavy</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <div class="mb-4 text-lg font-semibold">
+            Showing <span id="result-count" class="text-[var(--color-accent-battery)]">0</span> Laptops
+        </div>
+
+        <div id="laptops-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        </div>
+
+    </main>
+
+    <footer class="p-4 text-center text-sm opacity-70 mt-auto">
+        &copy; 2024 Student Laptop Finder. Built with Tailwind CSS & Vanilla JS.
+    </footer>
+
+    <script type="module" src="./src/js/laptops.js"></script>
+</body>
+</html>
